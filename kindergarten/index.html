@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>English Learning Cards - カルタ読み上げアプリ</title>
+    <title>English Learning Cards - 幼稚園向け</title>
     <style>
         body {
             font-family: 'Arial', sans-serif;
@@ -392,34 +392,46 @@
 </head>
 <body>
     <div class="container">
-        <h1>🎴 English Learning Cards</h1>
+        <h1>🎴 English Learning Cards<br><span style="font-size: 0.6em; color: #666;">幼稚園向け（80語）</span></h1>
         
         <div class="section">
             <h3>📂 カテゴリ選択</h3>
             <div class="checkbox-group">
                 <div class="checkbox-item">
-                    <input type="checkbox" id="color" value="color">
-                    <label for="color">色 (Colors)</label>
+                    <input type="checkbox" id="colors" value="colors">
+                    <label for="colors">色 (Colors) 10語</label>
                 </div>
                 <div class="checkbox-item">
                     <input type="checkbox" id="numbers" value="numbers">
-                    <label for="numbers">数字 (Numbers)</label>
+                    <label for="numbers">数字 (Numbers) 11語</label>
                 </div>
                 <div class="checkbox-item">
                     <input type="checkbox" id="shapes" value="shapes">
-                    <label for="shapes">形 (Shapes)</label>
+                    <label for="shapes">形 (Shapes) 6語</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="weather" value="weather">
-                    <label for="weather">季節と天気 (Weather)</label>
+                    <input type="checkbox" id="animals" value="animals">
+                    <label for="animals">動物 (Animals) 16語</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="days" value="days">
-                    <label for="days">曜日 (Days)</label>
+                    <input type="checkbox" id="food" value="food">
+                    <label for="food">食べ物 (Food) 9語</label>
                 </div>
                 <div class="checkbox-item">
-                    <input type="checkbox" id="months" value="months">
-                    <label for="months">月 (Months)</label>
+                    <input type="checkbox" id="clothes" value="clothes">
+                    <label for="clothes">服 (Clothes) 7語</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="family" value="family">
+                    <label for="family">家族 (Family) 6語</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="body" value="body">
+                    <label for="body">体 (Body) 11語</label>
+                </div>
+                <div class="checkbox-item">
+                    <input type="checkbox" id="greetings" value="greetings">
+                    <label for="greetings">挨拶 (Greetings) 4語</label>
                 </div>
             </div>
         </div>
@@ -516,49 +528,43 @@
             <div class="add-category-form">
                 <div style="margin-bottom: 15px;">
                     <label for="new-category-name" style="display: block; margin-bottom: 5px; font-weight: bold;">カテゴリ名:</label>
-                    <input type="text" id="new-category-name" placeholder="例: 動物、食べ物、乗り物など" style="width: 100%; max-width: 300px;">
+                    <input type="text" id="new-category-name" placeholder="例: 乗り物、楽器、季節など" style="width: 100%; max-width: 300px;">
                 </div>
                 <div style="margin-bottom: 15px;">
                     <label for="new-words-list" style="display: block; margin-bottom: 5px; font-weight: bold;">単語リスト:</label>
-                    <textarea id="new-words-list" rows="5" placeholder="apple, banana, orange, grape" style="width: 100%; max-width: 500px; resize: vertical;"></textarea>
+                    <textarea id="new-words-list" rows="5" placeholder="car, bus, train, bike" style="width: 100%; max-width: 500px; resize: vertical;"></textarea>
                     <div style="font-size: 12px; color: #666; margin-top: 5px;">
-                        💡 カンマ区切りで入力してください（最大50個）<br>
-                        例: apple, banana, orange, grape
+                        💡 カンマ区切りで入力してください（最大20個）<br>
+                        例: car, bus, train, bike
                     </div>
                 </div>
                 <button onclick="addCategory()" style="background: linear-gradient(135deg, #48bb78 0%, #38a169 100%);">➕ カテゴリを追加</button>
             </div>
             <div style="margin-top: 20px; padding: 15px; background: #fff3e0; border-radius: 8px; border-left: 4px solid #ff9a56;">
-                <h4 style="margin: 0 0 10px 0; color: #e65100;">📈 レベル別学習のヒント</h4>
+                <h4 style="margin: 0 0 10px 0; color: #e65100;">📈 幼稚園向け学習のコツ</h4>
                 <p style="margin: 0; font-size: 14px; color: #666;">
-                    <strong>初級：</strong>色、数字、形<br>
-                    <strong>中級：</strong>曜日、月<br>
-                    <strong>上級：</strong>季節と天気
+                    <strong>おすすめ順序：</strong>色→数字→形→動物→食べ物<br>
+                    <strong>神経衰弱との連携：</strong>カードで遊んでからアプリで発音確認<br>
+                    <strong>繰り返し学習：</strong>毎日少しずつ、楽しく継続
                 </p>
             </div>
         </div>
     </div>
 
     <script>
-        // 初期データ（日本語訳付き）
+        // 幼稚園向け80語の単語データ
         let wordData = {
-            color: [
-                {english: 'yellow', japanese: '黄色'},
+            colors: [
                 {english: 'red', japanese: '赤'},
+                {english: 'blue', japanese: '青'},
+                {english: 'yellow', japanese: '黄色'},
+                {english: 'green', japanese: '緑'},
                 {english: 'pink', japanese: 'ピンク'},
                 {english: 'white', japanese: '白'},
+                {english: 'black', japanese: '黒'},
                 {english: 'orange', japanese: 'オレンジ'},
                 {english: 'purple', japanese: '紫'},
-                {english: 'blue', japanese: '青'},
-                {english: 'green', japanese: '緑'},
-                {english: 'black', japanese: '黒'},
-                {english: 'brown', japanese: '茶色'},
-                {english: 'navy blue', japanese: '紺色'},
-                {english: 'gold', japanese: '金色'},
-                {english: 'silver', japanese: '銀色'},
-                {english: 'gray', japanese: '灰色'},
-                {english: 'light blue', japanese: '水色'},
-                {english: 'yellow green', japanese: '黄緑'}
+                {english: 'brown', japanese: '茶色'}
             ],
             numbers: [
                 {english: 'zero', japanese: '0'},
@@ -571,72 +577,80 @@
                 {english: 'seven', japanese: '7'},
                 {english: 'eight', japanese: '8'},
                 {english: 'nine', japanese: '9'},
-                {english: 'ten', japanese: '10'},
-                {english: 'eleven', japanese: '11'},
-                {english: 'twelve', japanese: '12'},
-                {english: 'thirteen', japanese: '13'},
-                {english: 'fourteen', japanese: '14'},
-                {english: 'fifteen', japanese: '15'},
-                {english: 'sixteen', japanese: '16'},
-                {english: 'seventeen', japanese: '17'},
-                {english: 'eighteen', japanese: '18'},
-                {english: 'nineteen', japanese: '19'},
-                {english: 'twenty', japanese: '20'},
-                {english: 'thirty', japanese: '30'},
-                {english: 'forty', japanese: '40'},
-                {english: 'fifty', japanese: '50'},
-                {english: 'sixty', japanese: '60'},
-                {english: 'seventy', japanese: '70'},
-                {english: 'eighty', japanese: '80'},
-                {english: 'ninety', japanese: '90'},
-                {english: 'one hundred', japanese: '100'}
+                {english: 'ten', japanese: '10'}
             ],
             shapes: [
                 {english: 'circle', japanese: '円'},
-                {english: 'diamond', japanese: 'ひし形'},
+                {english: 'triangle', japanese: '三角形'},
+                {english: 'square', japanese: '四角'},
                 {english: 'heart', japanese: 'ハート'},
-                {english: 'rectangle', japanese: '長方形'},
-                {english: 'square', japanese: '正方形'},
                 {english: 'star', japanese: '星'},
-                {english: 'triangle', japanese: '三角形'}
+                {english: 'diamond', japanese: 'ひし形'}
             ],
-            weather: [
-                {english: 'sunny', japanese: '晴れ'},
-                {english: 'rainy', japanese: '雨'},
-                {english: 'cloudy', japanese: '曇り'},
-                {english: 'windy', japanese: '風の強い'},
-                {english: 'hot', japanese: '暑い'},
-                {english: 'cold', japanese: '寒い'},
-                {english: 'snowy', japanese: '雪'},
-                {english: 'stormy', japanese: '嵐'},
-                {english: 'foggy', japanese: '霧'},
-                {english: 'partly cloudy', japanese: '晴れ時々曇り'},
-                {english: 'tornado', japanese: '竜巻'},
-                {english: 'lightning', japanese: '稲妻'},
-                {english: 'rainbow', japanese: '虹'}
+            animals: [
+                {english: 'dog', japanese: '犬'},
+                {english: 'cat', japanese: '猫'},
+                {english: 'bear', japanese: 'くま'},
+                {english: 'rabbit', japanese: 'うさぎ'},
+                {english: 'bird', japanese: 'とり'},
+                {english: 'fish', japanese: 'さかな'},
+                {english: 'elephant', japanese: 'ぞう'},
+                {english: 'lion', japanese: 'ライオン'},
+                {english: 'tiger', japanese: 'とら'},
+                {english: 'monkey', japanese: 'さる'},
+                {english: 'pig', japanese: 'ぶた'},
+                {english: 'cow', japanese: 'うし'},
+                {english: 'horse', japanese: 'うま'},
+                {english: 'sheep', japanese: 'ひつじ'},
+                {english: 'chicken', japanese: 'にわとり'},
+                {english: 'panda', japanese: 'パンダ'}
             ],
-            days: [
-                {english: 'Monday', japanese: '月曜日'},
-                {english: 'Tuesday', japanese: '火曜日'},
-                {english: 'Wednesday', japanese: '水曜日'},
-                {english: 'Thursday', japanese: '木曜日'},
-                {english: 'Friday', japanese: '金曜日'},
-                {english: 'Saturday', japanese: '土曜日'},
-                {english: 'Sunday', japanese: '日曜日'}
+            food: [
+                {english: 'apple', japanese: 'りんご'},
+                {english: 'banana', japanese: 'バナナ'},
+                {english: 'bread', japanese: 'パン'},
+                {english: 'rice', japanese: 'ごはん'},
+                {english: 'egg', japanese: 'たまご'},
+                {english: 'meat', japanese: 'お肉'},
+                {english: 'milk', japanese: 'ミルク'},
+                {english: 'juice', japanese: 'ジュース'},
+                {english: 'water', japanese: 'みず'}
             ],
-            months: [
-                {english: 'January', japanese: '1月'},
-                {english: 'February', japanese: '2月'},
-                {english: 'March', japanese: '3月'},
-                {english: 'April', japanese: '4月'},
-                {english: 'May', japanese: '5月'},
-                {english: 'June', japanese: '6月'},
-                {english: 'July', japanese: '7月'},
-                {english: 'August', japanese: '8月'},
-                {english: 'September', japanese: '9月'},
-                {english: 'October', japanese: '10月'},
-                {english: 'November', japanese: '11月'},
-                {english: 'December', japanese: '12月'}
+            clothes: [
+                {english: 'shirt', japanese: 'シャツ'},
+                {english: 'pants', japanese: 'ズボン'},
+                {english: 'shoes', japanese: 'くつ'},
+                {english: 'hat', japanese: 'ぼうし'},
+                {english: 'bag', japanese: 'かばん'},
+                {english: 'socks', japanese: 'くつした'},
+                {english: 'dress', japanese: 'ワンピース'}
+            ],
+            family: [
+                {english: 'father', japanese: 'お父さん'},
+                {english: 'mother', japanese: 'お母さん'},
+                {english: 'brother', japanese: 'お兄ちゃん'},
+                {english: 'sister', japanese: 'お姉ちゃん'},
+                {english: 'baby', japanese: 'あかちゃん'},
+                {english: 'friend', japanese: 'ともだち'}
+            ],
+            body: [
+                {english: 'head', japanese: 'あたま'},
+                {english: 'eyes', japanese: 'め'},
+                {english: 'nose', japanese: 'はな'},
+                {english: 'mouth', japanese: 'くち'},
+                {english: 'ears', japanese: 'みみ'},
+                {english: 'hand', japanese: 'て'},
+                {english: 'foot', japanese: 'あし'},
+                {english: 'hair', japanese: 'かみ'},
+                {english: 'teeth', japanese: 'は'},
+                {english: 'face', japanese: 'かお'},
+                {english: 'finger', japanese: 'ゆび'}
+            ],
+            greetings: [
+                {english: 'hello', japanese: 'こんにちは'},
+                {english: 'goodbye', japanese: 'さようなら'},
+                {english: 'thank you', japanese: 'ありがとう'},
+                {english: 'happy', japanese: 'うれしい'}
             ]
         };
         
@@ -692,7 +706,6 @@
             const mode = document.querySelector('input[name="mode"]:checked').value;
             
             if (mode === 'memory') {
-                // 神経衰弱モードでは何もしない（自動表示されているため）
                 return;
             }
             
@@ -785,7 +798,6 @@
             document.getElementById('memory-game-area').style.display = 'block';
             document.getElementById('start-btn').style.display = 'none';
             
-            // 神経衰弱モードでは設定は無効化しない
             updateMemoryGameDisplay();
         }
         
@@ -861,25 +873,20 @@
             const mode = document.querySelector('input[name="mode"]:checked').value;
             
             if (mode === 'memory') {
-                // 神経衰弱モード
                 document.getElementById('start-btn').style.display = 'none';
                 document.getElementById('memory-mode-note').style.display = 'block';
                 
-                // 既存のカルタモードを終了
                 if (isGameActive && !isMemoryMode) {
                     endGame();
                 }
                 
-                // 神経衰弱モードを自動開始
                 startMemoryGame();
                 
             } else {
-                // カルタモード
                 document.getElementById('start-btn').style.display = 'inline-block';
                 document.getElementById('start-btn').textContent = '🎮 カルタモード開始';
                 document.getElementById('memory-mode-note').style.display = 'none';
                 
-                // 神経衰弱モードが表示中なら終了
                 if (isMemoryMode) {
                     endMemoryGame();
                 }
@@ -980,7 +987,6 @@
         
         // 設定を無効化
         function disableSettings() {
-            // カルタモードのみカテゴリと順序を無効化
             if (!isMemoryMode) {
                 document.querySelectorAll('input[type="checkbox"]').forEach(cb => {
                     cb.disabled = true;
@@ -989,7 +995,6 @@
                     radio.disabled = true;
                 });
             }
-            // モード切り替えは常に無効化
             document.querySelectorAll('input[name="mode"]').forEach(radio => {
                 radio.disabled = true;
             });
@@ -1030,8 +1035,8 @@
                 return;
             }
             
-            if (words.length > 50) {
-                alert(`❌ 50個以下にしてください（現在：${words.length}個）`);
+            if (words.length > 20) {
+                alert(`❌ 20個以下にしてください（現在：${words.length}個）`);
                 return;
             }
             
